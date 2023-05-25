@@ -19,19 +19,19 @@
 roslaunch xf_pyros_iat main_node.launch
 ```
 终端二：  
-发布话题/func_switch_op启动语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_op启动语音识别，data: ''里可以是任何字符串  
 ```
 rostopic pub /func_switch_op std_msgs/String "data: ''" 
 ```
-发布话题/func_switch_cl关闭语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_cl关闭语音识别，data: ''里可以是任何字符串  
 ```
 rostopic pub /func_switch_cl std_msgs/String "data: ''" 
 ```
-发布话题/func_switch_re重置语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_re重置语音识别，data: ''里可以是任何字符串  
 ```
 rostopic pub /func_switch_re std_msgs/String "data: ''" 
 ```
-此外通过func_open_node、func_pause_node、func_reset_node三个节点也可以控制开、关、重置语音识别，命令如下：  
+* 此外通过func_open_node、func_pause_node、func_reset_node三个节点也可以控制开、关、重置语音识别，命令如下：  
 ```
 rosrun xf_pyros_iat func_open_node
 ```
