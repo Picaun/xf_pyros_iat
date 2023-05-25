@@ -12,7 +12,7 @@
 * close_switch_node.py用于关闭主程序语音识别  
 * reset_node.py用于重置整个进程，使其恢复到休眠状态。此时可以通过open_switch_node再次开启语音识别  
 * src中的cpp文件是用于生成ros节点，实际上就是用于控制以上节点，对应关系如下：（主要由于本人不会c++，故才加了src中的三个节点，如果你会C++可以自己把以上节点改写为C++）
-  * _func_open_node --> open_switch_node.py 、func_pause_node --> close_switch_node.py 、func_reset_node --> reset_node.py_
+  * _func_open_node.cpp --> open_switch_node.py 、func_pause_node.cpp --> close_switch_node.py 、func_reset_node.cpp --> reset_node.py_
 ## 使用步骤:
 终端一：   
 ```
