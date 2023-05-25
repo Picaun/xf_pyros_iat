@@ -1,0 +1,9 @@
+<launch>
+	<node pkg="xf_pyros_iat" name="main_node" type="main_node.py" output="screen"/>
+
+	<node pkg="xf_pyros_iat" name="open_node" type="open_switch_node.py" output="log"/>
+
+	<node pkg="xf_pyros_iat" name="pause_node" type="close_switch_node.py" output="log"/>
+
+	<node pkg="xf_pyros_iat" name="reset_node" type="reset_node.py" output="log"/>
+</launch>
