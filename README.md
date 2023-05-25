@@ -6,6 +6,7 @@
 * requirement：  
     * pass
 ## 节点说明：  
+![节点图](others/node.png "节点图")
 * main_node.py是主程序，承担语音识别模块。只运行该节点不会直接开始语音识别  
 * open_switch_node.py用于开启主程序语音识别  
 * close_switch_node.py用于关闭主程序语音识别  
