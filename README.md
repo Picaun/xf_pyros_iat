@@ -41,4 +41,4 @@ rosrun xf_pyros_iat func_pause_node
 rosrun xf_pyros_iat func_reset_node
 ```
 * 在终端一中查看语音识别情况，在终端二中使用节点或者发布话题来控制语音识别  
-* 在[这里]([http://blog.csdn.net/guodongxiaren](https://github.com/Picaun/pyros_voice_identify) "Picaun/pyros_voice_identify")可以找到更详细的配置步骤
+* 在[这里](https://github.com/Picaun/pyros_voice_identify "Picaun/pyros_voice_identify")可以找到更详细的配置步骤
