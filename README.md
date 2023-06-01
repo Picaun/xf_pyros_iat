@@ -46,15 +46,15 @@ XF_PYROS_IAT
 roslaunch xf_pyros_iat main_node.launch
 ```
 终端二：  
-* 发布话题/func_switch_op启动语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_op启动语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_op std_msgs/String "data: ''" 
 ```
-* 发布话题/func_switch_cl关闭语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_cl关闭语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_cl std_msgs/String "data: ''" 
 ```
-* 发布话题/func_switch_re重置语音识别，data: ''里可以是任何字符串  
+* 发布话题/func_switch_re重置语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_re std_msgs/String "data: ''" 
 ```
