@@ -33,9 +33,9 @@ XF_PYROS_IAT
 ```
 ## 节点说明：  
 ![节点图](others/node.png "节点图")
-* `main_node.py`是主程序，承担语音识别模块，对应节点为：`/main_node`，只运行该节点不会直接开始语音识别  
-* `open_switch_node.py`用于开启主程序语音识别，对应节点为：`/open_node`  
-* `close_switch_node.py`用于关闭主程序语音识别，对应节点为：`/pause_node`  
+* `main_node.py`是主程序，承担语音识别模块，对应节点为：/main_node，只运行该节点不会直接开始语音识别  
+* `open_switch_node.py`用于开启主程序语音识别，对应节点为：/open_node  
+* `close_switch_node.py`用于关闭主程序语音识别，对应节点为：/pause_node  
 * `reset_node.py`用于重置整个进程，使其恢复到休眠状态，对应节点为：/reset_node，运行一次该节点后就可以通过open_switch_node.py或/open_node再次开启语音识别
 * src中的cpp文件是用于生成ros节点，实际上就是用于控制以上节点，对应关系如下：（主要由于本人不会c++，故才加了src中的三个节点，如果你会C++可以自己把以上节点改写为C++）
   * _`func_open_node.cpp` --> `open_switch_node.py` 、`func_pause_node.cpp` --> `close_switch_node.py` 、`func_reset_node.cpp` --> `reset_node.py`_
@@ -46,19 +46,19 @@ XF_PYROS_IAT
 roslaunch xf_pyros_iat main_node.launch
 ```
 终端二：  
-* 发布话题`/func_switch_op`启动语音识别，`data: ' '`里可以是任何字符串，没有也行  
+* 发布话题/func_switch_op启动语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_op std_msgs/String "data: ''" 
 ```
-* 发布话题`/func_switch_cl`关闭语音识别，`data: ' '`里可以是任何字符串，没有也行  
+* 发布话题/func_switch_cl关闭语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_cl std_msgs/String "data: ''" 
 ```
-* 发布话题`/func_switch_re`重置语音识别，`data: ' '`里可以是任何字符串，没有也行  
+* 发布话题/func_switch_re重置语音识别，data: ' '里可以是任何字符串，没有也行  
 ```
 rostopic pub /func_switch_re std_msgs/String "data: ''" 
 ```
-* 此外通过`func_op_node`、`func_cl_node`、`func_re_node`三个节点也可以控制开、关、重置语音识别，命令如下：  
+* 此外通过/func_op_node、/func_cl_node、/func_re_node三个节点也可以控制开、关、重置语音识别，命令如下：  
 ```
 rosrun xf_pyros_iat func_op_node
 ```
