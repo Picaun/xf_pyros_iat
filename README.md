@@ -1,19 +1,46 @@
 # xf_pyros_iat
 基于ros的语音识别，使用python与科大讯飞语音听写api实现实时的语音识别，并利用节点发布话题控制进程。  
 ## 环境要求：  
-* ros，python3.x  
-- 声卡：sudo apt install libasound2-dev
+* ros1，python3.x  
+* 声卡：sudo apt install libasound2-dev
 * requirement：  
     * pass
+## 项目结构：
+```
+XF_PYROS_IAT
+│  .gitattributes
+│  CMakeLists.txt
+│  package.xml
+│  README.md
+│
+├─launch
+│      main_node.launch
+│
+├─others
+│      node.png
+│      node_main.png
+│
+├─scripts
+│      close_switch_node.py
+│      main_node.py
+│      open_switch_node.py
+│      reset_node.py
+│
+└─src
+        func_open_node.cpp
+        func_pause_node.cpp
+        func_reset_node.cpp
+```
 ## 节点说明：  
 ![节点图](others/node.png "节点图")
-* main_node.py是主程序，承担语音识别模块。只运行该节点不会直接开始语音识别  
-* open_switch_node.py用于开启主程序语音识别  
-* close_switch_node.py用于关闭主程序语音识别  
-* reset_node.py用于重置整个进程，使其恢复到休眠状态。此时可以通过open_switch_node再次开启语音识别  
+* main_node.py是主程序，承担语音识别模块，对应节点为：/main_node，只运行该节点不会直接开始语音识别  
+* open_switch_node.py用于开启主程序语音识别，对应节点为：/open_node  
+* close_switch_node.py用于关闭主程序语音识别，对应节点为：/pause_node  
+* reset_node.py用于重置整个进程，使其恢复到休眠状态。此时可以通过open_switch_node.py(open_node)再次开启语音识别，对应节点为：/reset_node  
 * src中的cpp文件是用于生成ros节点，实际上就是用于控制以上节点，对应关系如下：（主要由于本人不会c++，故才加了src中的三个节点，如果你会C++可以自己把以上节点改写为C++）
   * _func_open_node.cpp --> open_switch_node.py 、func_pause_node.cpp --> close_switch_node.py 、func_reset_node.cpp --> reset_node.py_
-## 使用步骤:
+## 使用步骤:  
+***注意：请提前修改 main_node.py 中的科大讯飞APPID，APIKey，APISecret！***  
 终端一：   
 ```
 roslaunch xf_pyros_iat main_node.launch
