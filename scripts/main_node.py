@@ -31,9 +31,9 @@ STATUS_LAST_FRAME = 2  # 最后一帧的标识
 class Ws_Param ( object ):
     # 初始化
     def __init__(self, APPID, APIKey, APISecret):
-        self.APPID = '6344d833'
-        self.APIKey = '4d06eac97a8e3df317c27e3e249c3148'
-        self.APISecret = 'NWRmMzJkMjVmODAyMDdiZTgzNTUyNTcw'
+        self.APPID = 'Your APPID'
+        self.APIKey = 'Your APIKey'
+        self.APISecret = 'Your APISecret'
 
         # 公共参数(common)
         self.CommonArgs = {"app_id": self.APPID}
